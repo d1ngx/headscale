@@ -177,13 +177,11 @@ Here are the ACL's to implement the same permissions as above:
       "dst": ["tag:dev-app-servers:80,443"]
     },
 
-    // We still have to allow internal users communications since nothing guarantees that each user have
-    // their own users.
-    { "action": "accept", "src": ["boss"], "dst": ["boss:*"] },
-    { "action": "accept", "src": ["dev1"], "dst": ["dev1:*"] },
-    { "action": "accept", "src": ["dev2"], "dst": ["dev2:*"] },
-    { "action": "accept", "src": ["admin1"], "dst": ["admin1:*"] },
-    { "action": "accept", "src": ["intern1"], "dst": ["intern1:*"] }
+    // We still have to allow internal groups communications 
+    { "action": "accept", "src": ["group:boss"], "dst": ["group:boss:*"] },
+    { "action": "accept", "src": ["group:dev"], "dst": ["group:dev:*"] },
+    { "action": "accept", "src": ["group:admin"], "dst": ["group:admin:*"] },
+    { "action": "accept", "src": ["group:intern"], "dst": ["group:intern:*"] }
   ]
 }
 ```
